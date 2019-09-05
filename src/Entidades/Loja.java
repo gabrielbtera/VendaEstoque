@@ -54,7 +54,7 @@ public class Loja {
     }
 
     // Cadastro e Listagem dos Produtos
-    public void adicionarProdutos(int codigoLote, String validadeLote, int quantidadeLote, String categoria,
+    public boolean adicionarProdutos(int codigoLote, String validadeLote, int quantidadeLote, String categoria,
             int codigoProduto, String marca, String nome, double precoVenda, int quantidadeDoProduto) {
         int z = 0;
 
@@ -74,6 +74,7 @@ public class Loja {
             }
         } catch (IOException e) {
             System.out.println("Error reading file: " + e.getMessage());
+            return false;
         }
 
         for (Integer x : codigosProdutos) {
@@ -95,10 +96,13 @@ public class Loja {
                 }
             } catch (IOException e) {
                 System.out.println("Error writing file: " + e.getMessage());
+                return false;
             }
             System.out.println("Produto com Codigo " + codigoProduto + " Realizado Com Sucesso");
+            return true;
         } else {
             System.out.println("Codigo do Produto ja existe no sitema, Cadastro nao Realizado");
+            return false;
         }
 
     }
@@ -113,7 +117,12 @@ public class Loja {
             List<String> testeAL = new ArrayList<String>();
             String texto = "";
             while (buff.ready()) {
-                texto = texto + buff.readLine() + "\n\n";
+                String itemCsv = buff.readLine();
+                String[] fields = itemCsv.split(",");
+                String saidaFormatada = "Codigo Lote: " + fields[0] + "\nValidade Lote: " + fields[1] + "\nQuantida Lote: " + fields[2] +
+                                "\nCategoria: " + fields[3] + "\nCodigo Produto: " + fields[4] + "\nMarca: " + fields[5] + 
+                                "\nNome: " + fields[6] + "\nPreco Venda: " + fields[7] + "\nQuantidade Estoque: " + fields[8];
+                texto = texto + saidaFormatada +  "\n\n";
             }
             buff.close();
             testeAL = Arrays.asList(texto.split(""));
@@ -161,7 +170,7 @@ public class Loja {
         System.out.println("Produtos Disponiveis:\n");
         String saida = "";
         try (BufferedReader br = new BufferedReader(new FileReader("Produto.csv"))) {
-            String texto = "";
+            String texto = "/";
             String itemCsv = br.readLine();
             List<String> testeAL = new ArrayList<String>();
 
@@ -172,15 +181,19 @@ public class Loja {
                     String[] fields = itemCsv.split(",");
                     verificaQuantidade = Integer.parseInt(fields[8]);
                     if (verificaQuantidade > 0) {
-                        texto = texto + itemCsv + "\n\n";
+                       
+                        String saidaFormatada = "Codigo Lote: " + fields[0] + "\nValidade Lote: " + fields[1] + "\nQuantida Lote: " + fields[2] +
+                                "\nCategoria: " + fields[3] + "\nCodigo Produto: " + fields[4] + "\nMarca: " + fields[5] + 
+                                "\nNome: " + fields[6] + "\nPreco Venda: " + fields[7] + "\nQuantidade Estoque: " + fields[8];
+                        texto = texto + saidaFormatada + "\n\n";
                         itemCsv = br.readLine();
                     } else {
                         itemCsv = br.readLine();
                     }
                     // itemCsv = br.readLine();
                 }
-
-                testeAL = Arrays.asList(texto.split(""));
+                
+                testeAL = Arrays.asList(texto.split("/"));
 
                 for (int i = 0; i < testeAL.size(); i++) {
                     saida = saida + testeAL.get(i);
@@ -250,7 +263,7 @@ public class Loja {
         //LEMBRAR DE ALTERAAAAAAAAAAAAAAAAAAAAAA
 
         System.out.println("Produto por categoria: ");
-        String saida = "";
+        String saida = "/";
 
         String verificaCategoria;
 
@@ -267,7 +280,10 @@ public class Loja {
                     verificaCategoria = fields[3];
                     if (verificaCategoria.equalsIgnoreCase(categoria)) {
                         // System.out.println(itemCsv);
-                        texto += itemCsv + "\n\n";
+                        String saidaFormatada = "Codigo Lote: " + fields[0] + "\nValidade Lote: " + fields[1] + "\nQuantida Lote: " + fields[2] +
+                                "\nCategoria: " + fields[3] + "\nCodigo Produto: " + fields[4] + "\nMarca: " + fields[5] + 
+                                "\nNome: " + fields[6] + "\nPreco Venda: " + fields[7] + "\nQuantidade Estoque: " + fields[8];
+                        texto += saidaFormatada + "\n\n";
                         itemCsv = br.readLine();
                     } else {
                         itemCsv = br.readLine();
@@ -327,7 +343,10 @@ public class Loja {
                     String[] fields = itemCsv.split(",");
                     verificaQuantidade = Integer.parseInt(fields[8]);
                     if (verificaQuantidade == 0) {
-                        texto = texto + itemCsv + "\n\n";
+                        String saidaFormatada = "Codigo Lote: " + fields[0] + "\nValidade Lote: " + fields[1] + "\nQuantida Lote: " + fields[2] +
+                                "\nCategoria: " + fields[3] + "\nCodigo Produto: " + fields[4] + "\nMarca: " + fields[5] + 
+                                "\nNome: " + fields[6] + "\nPreco Venda: " + fields[7] + "\nQuantidade Estoque: " + fields[8];
+                        texto = texto + saidaFormatada + "\n\n";
                         itemCsv = br.readLine();
                     } else {
                         itemCsv = br.readLine();
@@ -386,7 +405,7 @@ public class Loja {
     }
 
     // Cadastrar clientes
-    public void cadastrarCliente(String codigoCliente, String nome, Date dataDeNascimento, String email) {
+    public boolean cadastrarCliente(String codigoCliente, String nome, Date dataDeNascimento, String email) {
         int y = 0;
         cliente.clear();
         codigoVerificarCliente.clear();
@@ -421,16 +440,21 @@ public class Loja {
             if (z == 0) {
                 cliente.add(new Cliente(codigoCliente, nome, dataDeNascimento, email));
                 try (BufferedWriter bw = new BufferedWriter(new FileWriter("Cliente.csv", true))) {
+                    
                     for (Cliente x : cliente) {
                         bw.write(x.getCpf() + "," + x.getNome() + "," + x.getDataDeNascimento() + "," + x.getEmail());
-                        bw.newLine();
+                        
                     }
+                    bw.newLine();
                 } catch (IOException e) {
                     System.out.println("Error writing file: " + e.getMessage());
+                    return false;
                 }
                 System.out.println("Cadastro do Cliente com " + codigoCliente + " Realizado Com Sucesso");
+                return true;
             } else {
                 System.out.println("Codigo do cliente ja existe no sistema, Cadastro nao Realizado");
+                return false;
             }
 
             /*
@@ -447,9 +471,11 @@ public class Loja {
              */
         } else {
             System.out.println("CPF INVALIDO");
+            return false;
         }
     }
 
+    //LISTAR CLIENTES CADASTRADOS
     public String listarClienteCadastrados() {
         System.out.println("Produtos disponiveis na loja:\n");
 
@@ -458,7 +484,12 @@ public class Loja {
             List<String> testeAL = new ArrayList<String>();
             String texto = "";
             while (buff.ready()) {
-                texto = texto + buff.readLine() + "\n\n";
+                String itemCsv = buff.readLine();
+                String[] fields = itemCsv.split(",");
+                String saidaFormatada = "CPF: " + fields[0] + "\nNome: " + fields[1] + "\nData de Nascimento: " + fields[2] +
+                                "\nEmail: " + fields[3];
+                
+                texto = texto + saidaFormatada + "\n\n";
             }
             buff.close();
             testeAL = Arrays.asList(texto.split(""));

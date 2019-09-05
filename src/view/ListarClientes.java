@@ -6,6 +6,7 @@
 package view;
 
 import FuncaoFuncionario.FuncaoVendedor;
+import FuncaoFuncionario.GerenteFuncoes;
 
 /**
  *
@@ -78,7 +79,8 @@ public class ListarClientes extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         clientesCadastrados.setText("Clientes cadastrados");
-        FuncaoVendedor func = new FuncaoVendedor();
+        GerenteFuncoes func = new GerenteFuncoes();
+        escritaClientesCadastrados.setText(func.listarCliente());
 
         //escritaClientesCadastrados.setText(func.);
         

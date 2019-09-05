@@ -83,16 +83,16 @@ public class MenuGerente extends javax.swing.JFrame {
                     .addGroup(painelInteracaoLayout.createSequentialGroup()
                         .addGap(296, 296, 296)
                         .addComponent(botaoiniciaVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         painelInteracaoLayout.setVerticalGroup(
             painelInteracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelInteracaoLayout.createSequentialGroup()
-                .addGap(134, 134, 134)
+                .addGap(104, 104, 104)
                 .addComponent(jLabel1)
                 .addGap(51, 51, 51)
                 .addComponent(botaoiniciaVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addContainerGap(203, Short.MAX_VALUE))
         );
 
         Arquivo.setText("Arquivo");
@@ -213,11 +213,17 @@ public class MenuGerente extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelInteracao)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(painelInteracao)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelInteracao, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(painelInteracao)
+                .addContainerGap())
         );
 
         pack();

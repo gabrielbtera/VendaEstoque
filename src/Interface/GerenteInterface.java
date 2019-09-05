@@ -14,22 +14,24 @@ public interface GerenteInterface {
 
 	public void excluirCliente();
 
-	public void listarProdutoPorCategoria();
+	public String listarProdutoPorCategoria();
 
-	public void listarPromocoes();
+	public String listarPromocoes();
 
-	public void listarProdutosCadastrados();
+	public String listarProdutosCadastrados();
 
-	public void listarProdutosExcluidos();
+	public String listarProdutosExcluidos();
 
-	public void listarClientesExcluidos();
+	public String listarClientesExcluidos();
 
-	public void listarCompraPorNotaFiscal();
+	public String listarCompraPorNotaFiscal();
 
-	public void listarVendas();
+	public String listarVendas();
+        
+        public String listarCliente();
 
 	public void verificarVendas();
 
-	void listarProdutosDisponiveisNoEstoque();
+	public String listarProdutosDisponiveisNoEstoque();
 
 }

@@ -6,6 +6,8 @@
 
 package view;
 
+import FuncaoFuncionario.GerenteFuncoes;
+
 /**
  *
  * @author Gabriel
@@ -78,6 +80,9 @@ public class ListarProdutosExcluidos extends javax.swing.JInternalFrame {
     private void botaoListaExcluidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoListaExcluidosActionPerformed
         // TODO add your handling code here:
         apareceExcluidos.setText("Produtos excluidos: ");
+        GerenteFuncoes func = new GerenteFuncoes();
+        listagemProdutosExcluidos.setText(func.listarProdutosExcluidos());
+        
     }//GEN-LAST:event_botaoListaExcluidosActionPerformed
 
 

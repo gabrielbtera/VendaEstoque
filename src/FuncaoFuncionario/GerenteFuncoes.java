@@ -193,54 +193,54 @@ public class GerenteFuncoes extends Gerente implements GerenteInterface {
 	}
 
 	@Override
-	public void listarProdutoPorCategoria() {
+	public String listarProdutoPorCategoria() {
 		String categoria = input.next();
-		loja.listarProdutosporCategoria2(categoria);
+		return loja.listarProdutosporCategoria2(categoria);
 
 	}
 
 	@Override
-	public void listarPromocoes() {
+	public String listarPromocoes() {
 		// TODO Auto-generated method stub
+                return loja.listarProdutoPromocoe();
+	}
+
+	@Override
+	public String listarProdutosCadastrados() {
+		return loja.listarProdutosCadastrados();
 
 	}
 
 	@Override
-	public void listarProdutosCadastrados() {
-		loja.listarProdutosCadastrados();
+	public String listarProdutosExcluidos() {
+		return loja.listarProdutoExcluido();
 
 	}
 
 	@Override
-	public void listarProdutosExcluidos() {
-		loja.listarProdutoExcluido();
+	public String listarProdutosDisponiveisNoEstoque() {
+		return loja.listarProdutoDisponivelNoEstoque();
 
 	}
 
 	@Override
-	public void listarProdutosDisponiveisNoEstoque() {
-		loja.listarProdutoDisponivelNoEstoque();
-
+	public String listarClientesExcluidos() {
+		return loja.listarClientesExcluidos();
 	}
 
 	@Override
-	public void listarClientesExcluidos() {
-		loja.listarClientesExcluidos();
-	}
-
-	@Override
-	public void listarCompraPorNotaFiscal() {
+	public String listarCompraPorNotaFiscal() {
 		System.out.println("Digite o codigo do cliente a ser verificado");
 		String codigoVerificarCliente = input.next();
-		loja.listarVendaCliente(codigoVerificarCliente);
+		return loja.listarVendaCliente(codigoVerificarCliente);
 
-		System.out.println("===================");
+		
 
 	}
 
 	@Override
-	public void listarVendas() {
-		loja.listarVendas();
+	public String listarVendas() {
+		return loja.listarVendas();
 	}
 
 	@Override
@@ -265,5 +265,10 @@ public class GerenteFuncoes extends Gerente implements GerenteInterface {
 				System.out.println("Nao ha venda com esse codigo");
 		}
 	}
+
+    @Override
+    public String listarCliente() {
+        return loja.listarClienteCadastrados();
+    }
 
 }
