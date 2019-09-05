@@ -5,6 +5,8 @@
  */
 package view;
 
+import FuncaoFuncionario.FuncaoVendedor;
+
 /**
  *
  * @author Gabriel
@@ -78,8 +80,10 @@ public class ListarPromocoes extends javax.swing.JInternalFrame {
 
     private void botaoPromocoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPromocoesActionPerformed
         // TODO add your handling code here:
-        informapromo.setText("Produtos:");
-        
+        informapromo.setText("Produtos com promocao:");
+        FuncaoVendedor func = new FuncaoVendedor();
+
+        exibePromocoes.setText(func.listarPromocoes());
     }//GEN-LAST:event_botaoPromocoesActionPerformed
 
 

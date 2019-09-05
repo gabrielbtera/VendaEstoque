@@ -5,6 +5,8 @@
  */
 package view;
 
+import FuncaoFuncionario.FuncaoVendedor;
+
 /**
  *
  * @author Gabriel
@@ -28,16 +30,16 @@ public class ListarClientes extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        escritaProdutosCadastrados = new javax.swing.JTextArea();
+        escritaClientesCadastrados = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         clientesCadastrados = new javax.swing.JLabel();
 
         setClosable(true);
         setTitle("Listar Clientes Cadastrados");
 
-        escritaProdutosCadastrados.setColumns(20);
-        escritaProdutosCadastrados.setRows(5);
-        jScrollPane1.setViewportView(escritaProdutosCadastrados);
+        escritaClientesCadastrados.setColumns(20);
+        escritaClientesCadastrados.setRows(5);
+        jScrollPane1.setViewportView(escritaClientesCadastrados);
 
         jButton1.setText("Listar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -76,12 +78,16 @@ public class ListarClientes extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         clientesCadastrados.setText("Clientes cadastrados");
+        FuncaoVendedor func = new FuncaoVendedor();
+
+        //escritaClientesCadastrados.setText(func.);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel clientesCadastrados;
-    private javax.swing.JTextArea escritaProdutosCadastrados;
+    private javax.swing.JTextArea escritaClientesCadastrados;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

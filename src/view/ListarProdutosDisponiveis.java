@@ -5,6 +5,9 @@
  */
 package view;
 
+import Entidades.Loja;
+import FuncaoFuncionario.FuncaoVendedor;
+
 /**
  *
  * @author Gabriel
@@ -75,6 +78,9 @@ public class ListarProdutosDisponiveis extends javax.swing.JInternalFrame {
     private void listarProdutosemEstoqueBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarProdutosemEstoqueBotaoActionPerformed
         // TODO add your handling code here:
         mostraEstoque.setText("Produtos em estoque:");
+        FuncaoVendedor func = new FuncaoVendedor();
+
+        listedeProdutosNoEstoque.setText(func.ListarProdutosDisponiveis());
         
     }//GEN-LAST:event_listarProdutosemEstoqueBotaoActionPerformed
 

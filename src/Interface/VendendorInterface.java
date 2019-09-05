@@ -4,9 +4,9 @@ public interface VendendorInterface {
 
 	public void cadastrarCliente();
 
-	public void listarPordutoporCategoria();
+	public String listarPordutoporCategoria();
 
-	public void listarPromocoes();
+	public String listarPromocoes();
 
 	public String listarProdutosCadastrados();
 

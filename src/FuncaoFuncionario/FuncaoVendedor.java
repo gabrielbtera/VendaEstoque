@@ -59,15 +59,15 @@ public class FuncaoVendedor extends Vendedor implements VendendorInterface {
 	}
 
 	@Override
-	public void listarPordutoporCategoria() {
+	public String listarPordutoporCategoria() {
 		// Lista Produtos Por categoria
 		String categoria = input.next();
-		loja.listarProdutosporCategoria2(categoria);
+		return loja.listarProdutosporCategoria2(categoria);
 	}
 
 	@Override
-	public void listarPromocoes() {
-		// Ainda vamos implementar
+	public String listarPromocoes() {
+		return loja.listarProdutoPromocoe();
 
 	}
 
@@ -162,5 +162,5 @@ public class FuncaoVendedor extends Vendedor implements VendendorInterface {
     public String ListarProdutosDisponiveis() {
         return loja.listarProdutoDisponivelNoEstoque();//To change body of generated methods, choose Tools | Templates.
     }
-
+    
 }

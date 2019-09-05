@@ -23,74 +23,62 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="checkCarnes" min="-2" max="-2" attributes="0"/>
-                          <Component id="checkBebidas" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="checkHigiene" min="-2" max="-2" attributes="0"/>
-                          <Component id="checkLimpeza" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="615" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="checkLeiteDerivados" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="checkBebidas" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="checkHigiene" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="checkCarnes" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+                                      <Component id="checkLimpeza" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="checkCereais" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkLeiteDerivados" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="checkCereais" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="176" max="32767" attributes="0"/>
-                              <Component id="botaoListarCategoria" min="-2" pref="80" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                              <Component id="informar" min="-2" pref="254" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Component id="informar" min="-2" pref="254" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="checkLeiteDerivados" min="-2" max="-2" attributes="0"/>
-                          <Component id="checkBebidas" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="botaoListarCategoria" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="checkCarnes" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="checkCereais" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="checkHigiene" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="checkLimpeza" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="checkBebidas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkHigiene" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkLeiteDerivados" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="checkCarnes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkLimpeza" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkCereais" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               <Component id="informar" min="-2" pref="23" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="313" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="330" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -112,45 +100,55 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JCheckBox" name="checkBebidas">
+    <Component class="javax.swing.JLabel" name="informar">
+    </Component>
+    <Component class="javax.swing.JButton" name="checkBebidas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Bebidas"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkBebidasActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="checkCarnes">
+    <Component class="javax.swing.JButton" name="checkCarnes">
       <Properties>
         <Property name="text" type="java.lang.String" value="Carnes"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkCarnesActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="checkCereais">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cereais"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="checkHigiene">
+    <Component class="javax.swing.JButton" name="checkHigiene">
       <Properties>
         <Property name="text" type="java.lang.String" value="Higiene"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkHigieneActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="checkLeiteDerivados">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Leite e Derivados"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="checkLimpeza">
+    <Component class="javax.swing.JButton" name="checkLimpeza">
       <Properties>
         <Property name="text" type="java.lang.String" value="Limpeza"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="botaoListarCategoria">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Listar"/>
-      </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoListarCategoriaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkLimpezaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="informar">
+    <Component class="javax.swing.JButton" name="checkLeiteDerivados">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Leite e Derivados"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkLeiteDerivadosActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="checkCereais">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cereais"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkCereaisActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

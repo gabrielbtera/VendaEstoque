@@ -264,7 +264,6 @@ public class Loja {
             } else {
                 while (itemCsv != null) {
                     String[] fields = itemCsv.split(",");
-                    System.out.println(fields[3]);
                     verificaCategoria = fields[3];
                     if (verificaCategoria.equalsIgnoreCase(categoria)) {
                         // System.out.println(itemCsv);
@@ -857,6 +856,27 @@ public class Loja {
             System.out.println("Error writing file: " + e.getMessage());
         }
 
+    }
+    
+    public String listarProdutoPromocoe() {
+        String saida = "";
+        try (BufferedReader buff = new BufferedReader(new InputStreamReader(new FileInputStream("PromocaoProduto\\PromocaoProduto.csv")))) {
+            List<String> testeAL = new ArrayList<String>();
+            String texto = "";
+            while (buff.ready()) {
+                texto = texto + buff.readLine() + "\n\n";
+            }
+            buff.close();
+            testeAL = Arrays.asList(texto.split(""));
+            for (int i = 0; i < testeAL.size(); i++) {
+                saida = saida + testeAL.get(i);
+            }
+        } catch (Exception error) {
+            System.out.print("ERRO DURANTE A MANIPULAcao DO ARQUIVO");
+        }
+
+        System.out.println(saida);
+        return saida;
     }
 
 }
